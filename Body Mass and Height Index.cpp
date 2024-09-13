@@ -35,34 +35,36 @@ int main() {
     } else {
         cout << "You are obese." << endl;
     }
-
+// Prompt user to select between male or female
     cout << "Are you male or female (Enter M if male / F if female)." << endl;
     cin >> gender;
+    // If you chose Male this will determine if you are below the avarage height or above or just about the avarage height
     if (gender == 'm' || gender == 'M') {
-        if (height_cm >= 166 )
-        {
-            cout << "You are above the avarage height in indonesia." << endl;
-        }
-        if (height_cm <= 166 )
-        {
-            cout << "You are below the avarage height in indonesia." << endl;
-        }
-         if (height_cm == 166 )
+        if (height_cm == 166 )
         {
             cout << "You are the avarage height in indonesia." << endl;
         }
+        else if (height_cm >= 166 )
+        {
+            cout << "You are above the avarage height in indonesia." << endl;
+        }
+        else if (height_cm <= 166 )
+        {
+            cout << "You are below the avarage height in indonesia." << endl;
+        }
+        // If you chose Female this will determine if you are below the avarage height or above or just about the avarage height
     } else if (gender == 'f' || gender == 'F') {
-        if (height_cm >= 154 )
+        if (height_cm == 154 )
+        {
+            cout << "You are the avarage height in indonesia." << endl;
+        }
+        else if (height_cm >= 154 )
         {
             cout << "You are above the avarage height in indonesia." << endl;
         }
-        if (height_cm <= 154 )
+        else if (height_cm <= 154 )
         {
             cout << "You are below the avarage height in indonesia." << endl;
-        }
-         if (height_cm == 154 )
-        {
-            cout << "You are the avarage height in indonesia." << endl;
         }
     } 
     system("pause");
