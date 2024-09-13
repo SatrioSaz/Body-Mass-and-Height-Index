@@ -4,18 +4,23 @@
 using namespace std;
 
 int main() {
-    double weight, height, bmi;
+    double weight, height_cm, height_m, bmi;
+    string name;
+    char gender;
 
     // Prompt user to enter weight in kilograms
     cout << "Enter your weight in kilograms: ";
     cin >> weight;
 
-    // Prompt user to enter height in meters
-    cout << "Enter your height in meters: ";
-    cin >> height;
+     // Prompt user to enter height in centimeters
+    cout << "Enter your height in Centimeters: ";
+    cin >> height_cm;
+
+    // Convert height from centimeters to meters
+    height_m = height_cm / 100;
 
     // Calculate BMI using the formula: weight (kg) / (height (m) * height (m))
-    bmi = weight / pow(height, 2);
+    bmi = weight / pow(height_m, 2);
 
     // Output the calculated BMI
     cout << "Your BMI is: " << bmi << endl;
@@ -30,6 +35,36 @@ int main() {
     } else {
         cout << "You are obese." << endl;
     }
+
+    cout << "Are you male or female (Enter M if male / F if female)." << endl;
+    cin >> gender;
+    if (gender == 'm' || gender == 'M') {
+        if (height_cm >= 166 )
+        {
+            cout << "You are above the avarage height in indonesia." << endl;
+        }
+        if (height_cm <= 166 )
+        {
+            cout << "You are below the avarage height in indonesia." << endl;
+        }
+         if (height_cm == 166 )
+        {
+            cout << "You are the avarage height in indonesia." << endl;
+        }
+    } else if (gender == 'f' || gender == 'F') {
+        if (height_cm >= 154 )
+        {
+            cout << "You are above the avarage height in indonesia." << endl;
+        }
+        if (height_cm <= 154 )
+        {
+            cout << "You are below the avarage height in indonesia." << endl;
+        }
+         if (height_cm == 154 )
+        {
+            cout << "You are the avarage height in indonesia." << endl;
+        }
+    } 
     system("pause");
 
     return 0;
